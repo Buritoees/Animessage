@@ -77,7 +77,6 @@ body {
   height: 100vh;
   position: relative;
   display: flex;
-  align-items: stretch;
   justify-content: flex-start;
   padding: 0;
 }
@@ -133,10 +132,10 @@ body {
 }
 
 .auth-page-body.signup-design .wrapper img {
-  margin: 19rem 0px 0px 20rem;
+  margin: 17rem 0px 0px 15rem;
   align-self: center;
-  height: 40rem;
-  width: 51rem;
+  height: 70%;
+  width: 47%;
 }
 
 .auth-page-body.signup-design .content-area {
@@ -354,7 +353,6 @@ body {
 .form form .name-details .field {
   width: 50%;
 }
-
 /* Password field with icon */
 .form form .password-field {
   position: relative;
@@ -566,7 +564,12 @@ body {
   color: var(--color-text-light);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
-
+/* 🔑 NEW: Input Hover Border/Glow Effect (Enhanced to look like a stronger cursor effect) */
+.form input:not([type="file"]):not([type="submit"]):hover {
+  border-color: var(--color-main-accent);
+  /* Enhanced red glow on hover, closer to focus/button intensity */
+  box-shadow: 0 0 8px rgba(255, 80, 80, 0.6);
+}
 /* 🔑 MODIFIED: Input Focus Glow (Red) */
 .form input:not([type="file"]):not([type="submit"]):focus {
   border-color: var(--color-main-accent);
