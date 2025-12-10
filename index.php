@@ -1,0 +1,92 @@
+<?php 
+  session_start();
+  
+  if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true){
+    header("location: admin.php");
+    exit();
+  }
+  
+  if(isset($_SESSION['unique_id']) && $_SESSION['unique_id'] !== 0){
+    header("location: chatPage.php");
+    exit();
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animessage Signup</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body class="auth-page-body signup-design">
+    <div class="wrapper">
+      <img src="image/shinobu.png" alt="shinobu" class="shinobu">
+        <div class="content-area"> <section class="form signup">
+                <div class="signup-header">
+                    <h1 >Animessage</h1>
+                    <h2>Create new account<span class="accent-dot">.</span></h2>
+                </div>
+                
+                <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off" id="signupForm">
+                    <div class="error-text"></div> 
+                    
+                    <div class="name-details">
+                        <div class="field input">
+                            <label>First Name</label>
+                            <input type="text" name="fname" placeholder="First Name" required>
+                        </div>
+                        <div class="field input">
+                            <label>Last Name</label>
+                            <input type="text" name="lname" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="field input">
+                        <label>Email Address</label>
+                        <input type="text" name="email" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="field input password-field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Enter new password" required>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    
+                    <div class="field image">
+                        <label class="image-attach-label">Select Image</label>
+                        <input type="file" name="image" required>
+                    </div>
+                    
+                    <div class="auth-buttons-group">
+                        <div class="field button primary-btn full-width">
+                            <input type="submit" name="submit" value="Create account">
+                        </div>
+                    </div>
+                    
+                    <div class="link member-link">Already A Member? <a href="login.php">Log in</a></div>
+                    
+                </form>
+                
+            </section>
+        </div> 
+    </div> 
+  
+    <div class="modal-overlay" id="dynamicModalOverlay">
+        <div class="registration-modal" id="dynamicModal">
+            <button class="modal-close-btn" onclick="document.getElementById('dynamicModalOverlay').classList.remove('active');">
+                <i class="fas fa-times"></i>
+            </button>
+            <i class="modal-icon fas" id="modalIcon"></i>
+            <h2 id="modalTitle"></h2>
+            <p id="modalMessage"></p>
+            <a href="login.php" class="modal-action-link" id="modalActionLink">Go to Login</a>
+        </div>
+    </div>
+    <script src="javascript/pass-show-hide.js"></script>
+  <script src="javascript/signup.js"></script>
+
+</body>
+</html>

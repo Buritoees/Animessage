@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- 🌟 ANIWATCH-INSPIRED DARK MODE COLOR PALETTE (UPDATED) --- */
+:root {
+    /* Define colors for the Aniwatch-inspired Dark Mode Aesthetic */
+    --color-main-accent: #FF5050;
+    /* Primary Accent: Vibrant Crimson/Red */
+    --color-bg-page: #0B0E17;
+    /* Outer page background: Deep Black/Blue */
+    --color-bg-wrapper: #1F2432;
+    /* Card/Wrapper background: Dark Grey/Blue */
+    --color-bg-chat: #0B0E17;
+    /* Chat Box background (Matching page background) */
+    --color-input-bg: #2C3549;
+    /* Input background: Slightly Lighter Dark Blue */
+    --color-text-light: #F8F9FA;
+    /* Main Text Color: Off-White */
+    --color-text-subtle: #9EA5B0;
+    /* Subtle Text/Placeholder: Light Grey */
+    --color-border: #3F475B;
+    /* Main Border/Divider Color */
+    --color-border-light: var(--color-border);
+    --color-border-subtle: var(--color-border);
+    --color-online-status: #4CAF50;
+    /* Clean Green for Online Status */
+    --color-logout-button: #DC3545;
+    /* Used for Logout and Error */
+    --color-error: #DC3545;
+    --color-secondary-accent: #FF5050;
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* --- GLOBAL RESET & BODY STYLES (FULLSCREEN) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fullscreen Fix: Ensure HTML and Body take full vertical space */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-bg-page);
+    color: var(--color-text-light);
+
+    background-image: linear-gradient(rgba(11, 14, 23, 0.95), rgba(11, 14, 23, 0.95)), url('path/to/your/image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* --- 1. APPLICATION WRAPPER & LAYOUT (FULLSCREEN) --- */
+.main-portal-wrapper {
+    /* Set to full viewport dimensions */
+    width: 100vw;
+    max-width: none;
+    /* Remove maximum width constraint */
+    height: 100vh;
+    /* Use full viewport height */
+    min-height: 100vh;
+    /* Ensure full height is used */
+
+    background: var(--color-bg-wrapper);
+    border-radius: 0;
+    box-shadow: none;
+
+    display: flex;
+    overflow: hidden;
+}
+
+/* -------------------- Left Panel: User List -------------------- */
+.user-list-panel {
+    width: 600px;
+    min-width: 360px;
+    background: var(--color-bg-wrapper);
+    border-right: 1px solid var(--color-border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* User Panel Header */
+.user-list-panel header {
+    padding: 0 15px 15px 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-list-panel header .content {
+    display: flex;
+    align-items: center;
+}
+.user-list-panel header .details {
+    margin-left: 15px;
+}
+.user-list-panel header .details span {
+    font-weight: 600;
+}
+
+.user-list-panel header .details p {
+    color: var(--color-text-subtle);
+    font-size: 13px;
+}
+
+.user-list-panel header .logout {
+    color: var(--color-logout-button);
+    border: 1px solid var(--color-logout-button);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.user-list-panel header .logout:hover {
+    background-color: var(--color-logout-button);
+    color: var(--color-bg-wrapper);
+    transform: translateY(-1px);
+}
+
+/* Search Bar */
+.user-list-panel .search {
+    margin-bottom: 20px;
+}
+
+.user-list-panel .search .text {
+    text-align: left;
+    color: var(--color-text-subtle);
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.user-list-panel .search-box-group {
+    display: flex;
+}
+
+.user-list-panel .search input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    color: var(--color-text-light);
+    background: var(--color-input-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-list-panel .search input::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.user-list-panel .search input:focus {
+    border-color: var(--color-main-accent);
+    background: var(--color-bg-wrapper);
+    box-shadow: 0 0 0 2px rgba(255, 80, 80, 0.3);
+}
+
+.user-list-panel .search button {
+    display: none;
+}
+
+
+/* Users List */
+.user-list-panel .users-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.user-list-panel .users-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.user-list-panel .users-list::-webkit-scrollbar-track {
+    background: var(--color-bg-wrapper);
+}
+
+.user-list-panel .users-list::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 10px;
+}
+
+.users-list a {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    margin: 4px 0;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.users-list a:hover,
+.users-list a.active {
+    background-color: var(--color-bg-wrapper);
+    border-color: var(--color-main-accent);
+    box-shadow: 0 0 0 1px rgba(255, 80, 80, 0.5);
+}
+
+/* -------------------- USER LIST MESSAGE FIX (Supports PHP truncation) -------------------- */
+
+.users-list a .details {
+    flex-grow: 1; 
+    min-width: 0; 
+}
+
+/* PHP now handles the 10-character limit and '...', CSS just ensures layout integrity */
+.users-list a .details p {
+    white-space: nowrap;      
+    overflow: hidden;         
+    /* text-overflow: ellipsis; <-- Removed, as PHP adds the '...' */
+    max-width: 100%;          
+    overflow-wrap: break-word; 
+}
+
+
+/* -------------------- Right Panel: Chat Content -------------------- */
+.chat-content-area {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix: Rely strictly on flex-grow for nested containers to fill all space */
+.chat-content-area #dynamic-chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Chat Header */
+.chat-content-area header {
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-wrapper);
+    box-shadow: var(--shadow-subtle);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.chat-content-area header .details {
+    line-height: 1.2;
+}
+
+/* Chat Box (The message area) */
+.chat-box {
+    
+    /* CRITICAL FIX: This tells the chat-box to use all remaining vertical space */
+    flex-grow: 1;
+    min-height: 0;
+    /* CRITICAL FIX: Allows scrolling inside the flexible area */
+    overflow-y: auto;
+    padding: 25px 30px;
+    background: var(--color-bg-chat);
+    background-image: radial-gradient(var(--color-border) 0.5px, transparent 0.5px);
+    background-size: 15px 15px;
+    opacity: 0.95;
+}
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: var(--color-bg-chat);
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 10px;
+}
+
+
+/* Typing Area */
+.typing-area {
+    padding: 15px 30px;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-wrapper);
+    display: flex;
+    align-items: center;
+}
+
+.typing-area input.input-field {
+    height: 48px;
+    padding: 0 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    outline: none;
+    flex-grow: 1;
+    font-size: 15px;
+    margin-right: 10px;
+    background: var(--color-input-bg);
+    color: var(--color-text-light);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.typing-area input.input-field:focus {
+    border-color: var(--color-main-accent);
+    background: var(--color-bg-wrapper);
+    box-shadow: 0 0 0 2px rgba(255, 80, 80, 0.3);
+}
+
+.typing-area button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: var(--color-main-accent);
+    color: var(--color-bg-wrapper);
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 80, 80, 0.4);
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.typing-area button:hover {
+    background: #e64545;
+    transform: scale(1.05);
+}
+
+/* -------------------- Chat Placeholder -------------------- */
+.chat-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    color: var(--color-text-subtle);
+    background: var(--color-bg-chat);
+    background-image: radial-gradient(var(--color-border) 0.5px, transparent 0.5px);
+    background-size: 15px 15px;
+    opacity: 0.95;
+    /* Ensure it completely fills the outer chat-content-area */
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.chat-placeholder i {
+    font-size: 70px;
+    margin-bottom: 20px;
+    color: var(--color-main-accent);
+}
+
+.chat-placeholder h1 {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin: 0 0 5px 0;
+}
+
+.chat-placeholder p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* --- NEW STYLES FOR FULL-SCREEN CHAT MODE --- */
+
+/* 1. When the main wrapper has the 'chat-full-screen-active' class... */
+.main-portal-wrapper.chat-full-screen-active {
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 2. ...hide the User List Panel completely. */
+.main-portal-wrapper.chat-full-screen-active .user-list-panel {
+    display: none;
+}
+
+/* 3. ...and make the Chat Content Area take up 100% of the main wrapper's space. */
+.main-portal-wrapper.chat-full-screen-active .chat-content-area {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 100%;
+    flex-grow: 1;
+}
+
+/* -------------------- COMMON ELEMENTS (Chat Bubbles, Images, Status) -------------------- */
+
+/* User Image (The base image style) */
+img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-main-accent);
+}
+
+/* Status Icon */
+.status-dot {
+    font-size: 9px;
+    color: var(--color-text-subtle);
+    margin-left: 10px;
+}
+
+.status-dot.online {
+    color: var(--color-online-status);
+}
+
+/* Chat Bubbles Container (.chat) */
+.chat-box .chat {
+    display: flex;
+    align-items: flex-start;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.chat-box .chat .details {
+    max-width: 60%;
+}
+
+/* -------------------- Outgoing/Sender's Bubble (RIGHT SIDE) -------------------- */
+.outgoing {
+    /* Pushes the entire content (img + .details) to the right */
+    justify-content: flex-end;
+    /* Reverses the order of items: [Details] [Image] */
+    flex-direction: row-reverse;
+}
+
+.outgoing img {
+    /* FIX: Add margin to the LEFT (space between image and bubble) */
+    margin-right: 0; 
+    margin-left: 12px;
+    margin-bottom: 12px;
+}
+
+.outgoing .details {
+    /* Reset margins for details div */
+    margin-right: 0; 
+    margin-left: 0;
+}
+
+.outgoing .details p {
+    /* Right-aligns the text within the bubble */
+    text-align: right; 
+    
+    background: var(--color-main-accent);
+    color: var(--color-bg-wrapper);
+    border-radius: 18px 18px 4px 18px;
+    padding: 10px 15px;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* -------------------- Incoming/Receiver's Bubble (LEFT SIDE) -------------------- */
+.incoming {
+    /* Aligns the entire content [Image] [Details] to the left (default flex-start) */
+    justify-content: flex-start;
+    flex-direction: row; /* Default: [Image] [Details] */
+}
+
+.incoming img {
+    /* FIX: Add margin to the RIGHT (space between image and bubble) */
+    margin-right: 12px; 
+    margin-left: 0;
+    margin-bottom: 12px;
+}
+
+.incoming .details {
+    /* Auto margin ensures the message bubble stays near the left image */
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.incoming .details p {
+    /* Ensures text is left-aligned within the bubble */
+    text-align: left;
+    
+    background: var(--color-bg-wrapper);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 18px 18px 18px 4px;
+    padding: 10px 15px;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Hide back button on desktop */
+.chat-content-area .back-icon {
+    display: none;
+}
+
+
+/* -------------------- 3. RESPONSIVE DESIGN (MOBILE SCREENS) -------------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* Full screen mobile view */
+    .main-portal-wrapper {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        position: relative;
+    }
+
+    .user-list-panel {
+        width: 100vw;
+        min-width: 100vw;
+        border-right: none;
+        padding: 15px;
+    }
+
+    .user-list-panel header {
+        margin-bottom: 10px;
+    }
+
+    .chat-content-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Show the Chat Content Area when active (mobile only) */
+    .chat-content-area.chat-active {
+        transform: translateX(0);
+    }
+
+    /* Show the back button on mobile chat view */
+    .chat-content-area.chat-active .back-icon {
+        display: block;
+        margin-right: 15px;
+        color: var(--color-text-light);
+        font-size: 18px;
+    }
+}
+
+
+/* --- ABSOLUTE OVERRIDES FOR FULLSCREEN/HEIGHT FIXES (FINAL REVISIONS) --- */
+
+/* NEW RULE: Hide the dynamic container when no chat is selected (Fulfills user request) */
+.chat-content-area.no-chat-selected > #dynamic-chat-container {
+    display: none !important;
+}
+
+/* Rule to hide the placeholder when the 'no-chat-selected' class is removed (i.e., chat is active) */
+.chat-content-area:not(.no-chat-selected)>#chat-placeholder {
+    display: none !important;
+}
+
+/* Ensure dynamic container always fills 100% of the content area and acts as a vertical flex parent */
+.chat-content-area #dynamic-chat-container {
+    flex-grow: 1 !important;
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* FIX: Ensure the dynamically loaded .chat-area takes up 100% of the container and acts as a vertical Flexbox. */
+.chat-content-area #dynamic-chat-container .chat-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* REQUIRED: Makes the chat-area section fill the #dynamic-chat-container */
+    width: 100%;
+}
+
+/* Ensure the chat-box inside the chat-area fills the space between header and typing area */
+.chat-box {
+    flex-grow: 1 !important; /* REQUIRED: Makes the chat-box scroll area consume the available vertical space */
+    overflow-y: auto !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
