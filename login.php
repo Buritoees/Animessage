@@ -28,7 +28,7 @@ if (isset($_SESSION['unique_id']) && $_SESSION['unique_id'] !== 0) {
 
 <body class="auth-page-body signup-design">
   <div class="wrapper">
-    <img src="image/shinobu.png" alt="shinobu" class="shinobu">
+    <img src="Images_Misc/shinobu.png" alt="shinobu" class="shinobu">
     <div class="content-area">
       <section class="form login">
 
