@@ -1,40 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-/* --- 🌑 ANIME-INSPIRED DARK MODE / MODERN AESTHETIC COLOR PALETTE (Requested) --- */
 :root {
-  /* Define colors for the Aniwatch-inspired Dark Mode Aesthetic */
   --color-main-accent: #FF5050;
-  /* Primary Accent: Vibrant Crimson/Red */
   --color-bg-page: #0B0E17;
-  /* Outer page background: Deep Black/Blue */
   --color-bg-wrapper: #1F2432;
-  /* Card/Wrapper background: Dark Grey/Blue */
   --color-input-bg: #2C3549;
-  /* Input background: Slightly Lighter Dark Blue */
   --color-text-light: #F8F9FA;
-  /* Main Text Color: Off-White */
   --color-text-subtle: #9EA5B0;
-  /* Subtle Text/Placeholder: Light Grey */
   --color-border: #3F475B;
-  /* Input border color: Darker Grey */
   --color-error: #DC3545;
-  /* Standard Red for Errors */
   --color-secondary-accent: #FF5050;
-  /* Secondary accent matches primary */
   --color-online-status: #4CAF50;
-  /* Clean Green for Online Status (NEW) */
   --color-success: #4CAF50;
 }
 
 .form .error-text.success {
-  /* Set background and text to green for success */
   background: var(--color-success);
   color: var(--color-text-light);
-  /* Use light text color for contrast on dark/colored background */
   border-color: var(--color-success);
 }
 
-/* --- GLOBAL RESET & BODY STYLES --- */
 * {
   margin: 0;
   padding: 0;
@@ -44,30 +29,21 @@
   transition: all 0.25s ease;
 }
 
-/* Enforce full height for root elements */
-html,
-body {
+html, body {
   height: 100%;
 }
 
-/* Base Body Style - Set min-height for full screen */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   background-color: var(--color-bg-page);
-
-  /* 🔑 MODIFIED: Set up for full screen applications (Chat/Users) by default */
   display: flex;
   align-items: flex-start;
-  /* Start from the top */
   justify-content: center;
-  /* Keep content centered horizontally */
   overflow-x: hidden;
-  /* Prevent horizontal scroll */
 }
 
-/* --- LOGIN/SIGNUP SPECIFIC LAYOUT (Full Screen, Content on Right) --- */
 .auth-page-body.signup-design {
   background-image: url('image/background7.png');
   background-size: cover;
@@ -85,9 +61,7 @@ body {
   content: none;
 }
 
-/* 🔑 MODIFIED: WRAPPER STYLES (USERS LIST PAGE: Full Screen Container) */
 .wrapper {
-  /* This style applies to the Users List page, making it full screen */
   background: var(--color-bg-wrapper);
   width: 100%;
   height: 100vh;
@@ -96,31 +70,24 @@ body {
   box-shadow: none;
   padding: 0;
   margin: 0;
-
   display: flex;
   justify-content: center;
-  /* Center the inner content container */
   align-items: center;
   color: var(--color-text-light);
   overflow: hidden;
 }
 
-
-/* 🔑 MODIFIED: Specific Wrapper for Signup/Login Pages (Right Panel - high specificity overrides generic) */
 .auth-page-body.signup-design .wrapper {
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  /* Updated gradient to use dark mode colors */
   background: linear-gradient(to left,
       var(--color-bg-wrapper) 30%,
       rgba(31, 36, 50, 0.8) 35%,
       transparent 75%);
-
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-
   border-radius: 0;
   box-shadow: none;
   border: none;
@@ -148,7 +115,6 @@ body {
   animation: show 0.6s ease-in-out;
 }
 
-/* --- FORM SECTION STYLING --- */
 .form {
   z-index: 2;
   position: relative;
@@ -156,14 +122,10 @@ body {
   width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* --- DYNAMIC SPOTLIGHT TARGET STYLES --- */
-/* ---------------------------------------------------- */
 .logo {
   margin: 5px 0 0 15px;
   width: 100px;
   height: 100px;
-
 }
 
 .logo:hover {
@@ -175,7 +137,6 @@ body {
     opacity: 0.4;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(-10px);
@@ -186,7 +147,6 @@ body {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -199,24 +159,18 @@ body {
   text-align: center;
   cursor: pointer;
   user-select: none;
-
-  /* SPOTLIGHT TARGET VARIABLES & BASE STATE (H1: Text Spotlight) */
   --base-color: var(--color-text-light);
   --accent-color: var(--color-main-accent);
   --spotlight-radius: 80px;
-
-  /* BASE CSS FOR TEXT EFFECT */
   color: var(--color-text-light);
   background: var(--color-text-light);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
   text-shadow: none;
   transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Image Attach Field (Input File Label) */
 .field.image-attach {
   margin-bottom: 20px;
 }
@@ -230,18 +184,12 @@ body {
   font-weight: 500;
   cursor: pointer;
   font-size: 16px;
-
-  /* SPOTLIGHT TARGET VARIABLES & BASE STATE (Button: Background Spotlight) */
   --base-color: var(--color-bg-wrapper);
   --accent-color: #FFFFFF;
   --spotlight-radius: 70px;
-
-  /* BASE PROPERTIES */
   background: var(--color-bg-wrapper);
-  /* Use new dark color */
   border: 1px solid var(--color-border);
   color: var(--color-text-light);
-
   transition: border-color 0.2s, color 0.2s, background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -249,7 +197,6 @@ body {
   border-color: var(--color-main-accent);
 }
 
-/* --- Authentication Buttons Group --- */
 .auth-buttons-group {
   display: flex;
   justify-content: center;
@@ -261,7 +208,6 @@ body {
   width: 100%;
 }
 
-/* Primary Button Input (Applies to both login and signup) */
 .auth-buttons-group .primary-btn input {
   display: block;
   width: 100%;
@@ -273,29 +219,18 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-
-  /* SPOTLIGHT TARGET VARIABLES & BASE STATE */
   --base-color: var(--color-main-accent);
   --accent-color: #000;
   --spotlight-radius: 80px;
-
-  /* BASE PROPERTIES */
   background: var(--color-main-accent);
   color: #000;
-  /* Black text on red for contrast */
-  /* Softened base shadow for better blending (using the red accent) */
   box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
-
   transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .auth-buttons-group .primary-btn input:hover {
   background: #CC4040;
-  /* Darker red hover */
 }
-
-
-/* --- REST OF THE CSS STYLES (Kept for completeness) --- */
 
 .signup-header h2 {
   font-size: 32px;
@@ -318,7 +253,6 @@ body {
   display: none;
 }
 
-/* Input Field Styles */
 .form form .field.input {
   margin-bottom: 20px;
 }
@@ -344,7 +278,6 @@ body {
   box-shadow: 0 0 0 1px var(--color-main-accent);
 }
 
-/* Name fields side-by-side */
 .form form .name-details {
   display: flex;
   gap: 15px;
@@ -353,7 +286,7 @@ body {
 .form form .name-details .field {
   width: 50%;
 }
-/* Password field with icon */
+
 .form form .password-field {
   position: relative;
 }
@@ -371,8 +304,6 @@ body {
   cursor: pointer;
 }
 
-
-/* --- LOGIN/SIGNUP LINK --- */
 .link.member-link {
   text-align: left;
   margin-top: 25px;
@@ -395,9 +326,6 @@ body {
   display: none;
 }
 
-/* ---------------------------------------------------- */
-/* --- 🎉 SUCCESS MODAL GUI STYLING --- */
-/* ---------------------------------------------------- */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -469,28 +397,18 @@ body {
 }
 
 @keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(-10px);
   }
-
   60% {
     transform: translateY(-5px);
   }
 }
 
-/* --- RESPONSIVENESS (Login/Signup Adjustments) --- */
 @media screen and (max-width: 900px) {
-
-  /* Auth Page Responsiveness */
   .auth-page-body.signup-design {
     justify-content: center;
     align-items: center;
@@ -498,7 +416,6 @@ body {
     min-height: 100vh;
     padding: 20px 0;
   }
-
   .auth-page-body.signup-design .wrapper {
     width: 100%;
     height: auto;
@@ -506,7 +423,6 @@ body {
     justify-content: center;
     position: relative;
   }
-
   .auth-page-body.signup-design .content-area {
     width: 90%;
     max-width: 400px;
@@ -515,40 +431,30 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     padding: 30px;
   }
-
   .auth-page-body.signup-design .wrapper img {
     display: none;
   }
-
-  /* Chat/Users Page Responsiveness */
-  .users,
-  .chat-area {
+  .users, .chat-area {
     width: 100%;
     max-width: none;
   }
-
   .users-list {
     padding-right: 0;
   }
-
   .signup-header h1 {
     font-size: 36px;
   }
-
   .signup-header h2 {
     font-size: 24px;
   }
-
   .form form .name-details {
     flex-direction: column;
   }
-
   .form form .name-details .field {
     width: 100%;
   }
 }
 
-/* --- Input Field Styles (General input glow) --- */
 .form .name-details .field input {
   width: 100%;
 }
@@ -564,44 +470,33 @@ body {
   color: var(--color-text-light);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
-/* 🔑 NEW: Input Hover Border/Glow Effect (Enhanced to look like a stronger cursor effect) */
+
 .form input:not([type="file"]):not([type="submit"]):hover {
   border-color: var(--color-main-accent);
-  /* Enhanced red glow on hover, closer to focus/button intensity */
   box-shadow: 0 0 8px rgba(255, 80, 80, 0.6);
 }
-/* 🔑 MODIFIED: Input Focus Glow (Red) */
+
 .form input:not([type="file"]):not([type="submit"]):focus {
   border-color: var(--color-main-accent);
   box-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
   outline: none;
 }
 
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: USERS LIST PAGE STYLES (users.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
 .users {
-  /* Inner content container - REFINED STYLING */
   width: 100%;
   max-width: 450px;
-  /* Standard chat/user list width */
   height: 100%;
   max-height: 700px;
-  /* Max height for desktop/tablet */
   padding: 25px 30px;
   background: var(--color-bg-wrapper);
   border-radius: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  /* Subtle shadow for depth */
-
   display: flex;
   flex-direction: column;
   color: var(--color-text-light);
 }
 
-.users header,
-.users-list a {
+.users header, .users-list a {
   display: flex;
   align-items: center;
   padding-bottom: 20px;
@@ -613,7 +508,6 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  /* Ensure images are circles */
 }
 
 :is(.users, .users-list) .content {
@@ -631,13 +525,10 @@ body {
   font-weight: 500;
 }
 
-/* Logout Button - Consistent with primary accent styling */
 .users header .logout {
   display: block;
   background: var(--color-main-accent);
-  /* Use main accent */
   color: #000;
-  /* Black text for high contrast */
   outline: none;
   border: none;
   padding: 7px 15px;
@@ -650,13 +541,11 @@ body {
 
 .users header .logout:hover {
   background: #CC4040;
-  /* Darker red hover */
   filter: none;
   transform: translateY(-2px);
   box-shadow: 0 7px 15px rgba(255, 80, 80, 0.5);
 }
 
-/* Search Bar */
 .users .search {
   margin: 20px 0;
   display: flex;
@@ -679,7 +568,6 @@ body {
   border: 1px solid var(--color-border);
   outline: none;
   border-radius: 10px 0 0 10px;
-  /* Rounded left side */
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s ease;
@@ -706,12 +594,10 @@ body {
   cursor: pointer;
   border: 1px solid var(--color-border);
   border-left: none;
-  /* Blends with input */
   background: var(--color-input-bg);
   color: var(--color-text-subtle);
   outline: none;
   border-radius: 0 10px 10px 0;
-  /* Rounded right side */
   transition: all 0.3s ease;
 }
 
@@ -725,9 +611,7 @@ body {
   content: '\f00d';
 }
 
-/* Users List */
 .users-list {
-  /* Let the list consume available vertical space */
   flex-grow: 1;
   max-height: 100%;
   overflow-y: auto;
@@ -740,22 +624,18 @@ body {
 
 .users-list a {
   padding: 10px 0;
-  /* Adjusted vertical padding */
   margin-bottom: 5px;
-  /* Added small vertical margin for separation */
   padding-left: 10px;
   padding-right: 10px;
   margin-left: -10px;
   margin-right: -10px;
   border-bottom: 1px solid var(--color-border);
   border-radius: 8px;
-  /* Subtle rounding for hover */
   transition: all 0.25s ease;
 }
 
 .users-list a:hover {
   background: rgba(255, 80, 80, 0.05);
-  /* Subtle red tint on hover */
 }
 
 .users-list a:last-child {
@@ -776,7 +656,6 @@ body {
 .users-list a .status-dot {
   font-size: 12px;
   color: var(--color-online-status);
-  /* Clean Green */
   padding-left: 10px;
 }
 
@@ -784,26 +663,17 @@ body {
   color: var(--color-text-subtle);
 }
 
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: CHAT AREA STYLES (chat.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
 .chat-area {
   padding: 0;
-  /* Removed padding here, added to header/box/typing area */
   width: 100%;
   height: 100vh;
-  /* Make the section full height */
   max-width: 800px;
-  /* Centered max-width for readability */
   background: var(--color-bg-wrapper);
-  /* Set background here as it lacks a wrapper */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-/* Integrated Header Structure */
 .chat-area header {
   display: flex;
   align-items: center;
@@ -835,15 +705,12 @@ body {
   color: var(--color-text-subtle);
 }
 
-/* Integrated Chat Box Structure */
 .chat-box {
   flex-grow: 1;
   height: auto;
   max-height: none;
   padding: 20px 30px;
-  /* Consistent padding */
   background: var(--color-bg-page);
-  /* Page background for chat messages area */
   overflow-y: auto;
 }
 
@@ -886,7 +753,6 @@ body {
 }
 
 .outgoing .details p {
-  /* Primary accent for outgoing messages */
   background: var(--color-main-accent);
   color: #000;
   border-radius: 18px 18px 0 18px;
@@ -910,14 +776,12 @@ body {
 }
 
 .incoming .details p {
-  /* Input background for incoming messages */
   background: var(--color-input-bg);
   color: var(--color-text-light);
   border: 1px solid var(--color-border);
   border-radius: 18px 18px 18px 0;
 }
 
-/* Integrated Typing Area Structure */
 .typing-area {
   padding: 18px 30px;
   display: flex;
@@ -929,7 +793,6 @@ body {
 .typing-area input[type="text"] {
   height: 45px;
   width: calc(100% - 63px);
-  /* Adjusted width for new button/margin */
   font-size: 16px;
   padding: 0 13px;
   border: 1px solid var(--color-border);
@@ -956,7 +819,6 @@ body {
   pointer-events: none;
   border-radius: 10px;
   margin-left: 8px;
-  /* Slight separation from input */
   transition: all 0.3s ease;
 }
 
@@ -969,1587 +831,70 @@ body {
   background: #CC4040;
 }
 
-/* --- RESPONSIVENESS (Adjusted to maintain dark mode aesthetic) --- */
-@media screen and (max-width: 900px) {
-
-  /* Auth Page Responsiveness */
-  .auth-page-body.signup-design {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
+@media screen and (max-width: 768px) {
+  .chat-area header img {
+    height: 40px;
+    width: 40px;
   }
-
-  .auth-page-body.signup-design .wrapper {
-    width: 100%;
-    height: auto;
-    background: var(--color-bg-wrapper);
-    justify-content: center;
-    position: relative;
-  }
-
-  .auth-page-body.signup-design .content-area {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-  }
-
-  .auth-page-body.signup-design .wrapper img {
-    display: none;
-  }
-
-  /* Chat/Users Page Responsiveness */
-  .users,
-  .chat-area {
-    width: 100%;
-    max-width: none;
-  }
-
-  .users-list {
-    padding-right: 0;
-  }
-
-  .signup-header h1 {
-    font-size: 36px;
-  }
-
-  .signup-header h2 {
-    font-size: 24px;
-  }
-
-  .form form .name-details {
-    flex-direction: column;
-  }
-
-  .form form .name-details .field {
-    width: 100%;
-  }
-}
-
-/* --- Input Field Styles (General input glow) --- */
-.form .name-details .field input {
-  width: 100%;
-}
-
-.form input:not([type="file"]):not([type="submit"]) {
-  height: 50px;
-  width: 100%;
-  font-size: 16px;
-  padding: 0 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* 🔑 MODIFIED: Input Focus Glow (Red) */
-.form input:not([type="file"]):not([type="submit"]):focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
-  outline: none;
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: USERS LIST PAGE STYLES (users.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.users {
-  /* Inner content container - REFINED STYLING */
-  width: 100%;
-  max-width: 450px;
-  /* Standard chat/user list width */
-  height: 100%;
-  max-height: 700px;
-  /* Max height for desktop/tablet */
-  padding: 25px 30px;
-  background: var(--color-bg-wrapper);
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  /* Subtle shadow for depth */
-
-  display: flex;
-  flex-direction: column;
-  color: var(--color-text-light);
-}
-
-.users header,
-.users-list a {
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-border);
-  justify-content: space-between;
-}
-
-.users header img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  /* Ensure images are circles */
-}
-
-:is(.users, .users-list) .content {
-  display: flex;
-  align-items: center;
-}
-
-:is(.users, .users-list) .content .details {
-  color: var(--color-text-light);
-  margin-left: 20px;
-}
-
-:is(.users, .users-list) .details span {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* Logout Button - Consistent with primary accent styling */
-.users header .logout {
-  display: block;
-  background: var(--color-main-accent);
-  /* Use main accent */
-  color: #000;
-  /* Black text for high contrast */
-  outline: none;
-  border: none;
-  padding: 7px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
-}
-
-.users header .logout:hover {
-  background: #CC4040;
-  /* Darker red hover */
-  filter: none;
-  transform: translateY(-2px);
-  box-shadow: 0 7px 15px rgba(255, 80, 80, 0.5);
-}
-
-/* Search Bar */
-.users .search {
-  margin: 20px 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.users .search .text {
-  font-size: 18px;
-  color: var(--color-text-light);
-}
-
-.users .search input {
-  position: absolute;
-  height: 42px;
-  width: calc(100% - 50px);
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px 0 0 10px;
-  /* Rounded left side */
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-}
-
-.users .search input.show:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.users .search input.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.users .search button {
-  position: relative;
-  z-index: 1;
-  width: 47px;
-  height: 42px;
-  font-size: 17px;
-  cursor: pointer;
-  border: 1px solid var(--color-border);
-  border-left: none;
-  /* Blends with input */
-  background: var(--color-input-bg);
-  color: var(--color-text-subtle);
-  outline: none;
-  border-radius: 0 10px 10px 0;
-  /* Rounded right side */
-  transition: all 0.3s ease;
-}
-
-.users .search button.active {
-  background: var(--color-main-accent);
-  color: #000;
-  border-color: var(--color-main-accent);
-}
-
-.search button.active i::before {
-  content: '\f00d';
-}
-
-/* Users List */
-.users-list {
-  /* Let the list consume available vertical space */
-  flex-grow: 1;
-  max-height: 100%;
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-:is(.users-list, .chat-box)::-webkit-scrollbar {
-  width: 0px;
-}
-
-.users-list a {
-  padding: 10px 0;
-  /* Adjusted vertical padding */
-  margin-bottom: 5px;
-  /* Added small vertical margin for separation */
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  border-bottom: 1px solid var(--color-border);
-  border-radius: 8px;
-  /* Subtle rounding for hover */
-  transition: all 0.25s ease;
-}
-
-.users-list a:hover {
-  background: rgba(255, 80, 80, 0.05);
-  /* Subtle red tint on hover */
-}
-
-.users-list a:last-child {
-  margin-bottom: 0px;
-  border-bottom: none;
-}
-
-.users-list a img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.users-list a .details p {
-  color: var(--color-text-subtle);
-}
-
-.users-list a .status-dot {
-  font-size: 12px;
-  color: var(--color-online-status);
-  /* Clean Green */
-  padding-left: 10px;
-}
-
-.users-list a .status-dot.offline {
-  color: var(--color-text-subtle);
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: CHAT AREA STYLES (chat.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.chat-area {
-  padding: 0;
-  /* Removed padding here, added to header/box/typing area */
-  width: 100%;
-  height: 100vh;
-  /* Make the section full height */
-  max-width: 800px;
-  /* Centered max-width for readability */
-  background: var(--color-bg-wrapper);
-  /* Set background here as it lacks a wrapper */
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Integrated Header Structure */
-.chat-area header {
-  display: flex;
-  align-items: center;
-  padding: 18px 30px;
-  background: var(--color-bg-wrapper);
-  color: var(--color-text-light);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.chat-area header .back-icon {
-  color: var(--color-text-light);
-  font-size: 18px;
-}
-
-.chat-area header img {
-  height: 45px;
-  width: 45px;
-  margin: 0 15px;
-  border-radius: 50%;
-}
-
-.chat-area header .details span {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-text-light);
-}
-
-.chat-area header .details p {
-  color: var(--color-text-subtle);
-}
-
-/* Integrated Chat Box Structure */
-.chat-box {
-  flex-grow: 1;
-  height: auto;
-  max-height: none;
-  padding: 20px 30px;
-  /* Consistent padding */
-  background: var(--color-bg-page);
-  /* Page background for chat messages area */
-  overflow-y: auto;
-}
-
-.chat-box::-webkit-scrollbar-track {
-  background: var(--color-bg-wrapper);
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-}
-
-.chat-box .text {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: calc(100% - 50px);
-  text-align: center;
-  transform: translate(-50%, -50%);
-  color: var(--color-text-subtle);
-}
-
-.chat-box .chat {
-  margin: 15px 0;
-}
-
-.chat-box .chat p {
-  word-wrap: break-word;
-  padding: 10px 18px;
-  border-radius: 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.chat-box .outgoing {
-  display: flex;
-}
-
-.chat-box .outgoing .details {
-  margin-left: auto;
-  max-width: calc(100% - 130px);
-}
-
-.outgoing .details p {
-  /* Primary accent for outgoing messages */
-  background: var(--color-main-accent);
-  color: #000;
-  border-radius: 18px 18px 0 18px;
-}
-
-.chat-box .incoming {
-  display: flex;
-  align-items: flex-end;
-}
-
-.chat-box .incoming img {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-.chat-box .incoming .details {
-  margin-right: auto;
-  margin-left: 10px;
-  max-width: calc(100% - 130px);
-}
-
-.incoming .details p {
-  /* Input background for incoming messages */
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  border: 1px solid var(--color-border);
-  border-radius: 18px 18px 18px 0;
-}
-
-/* Integrated Typing Area Structure */
-.typing-area {
-  padding: 18px 30px;
-  display: flex;
-  justify-content: space-between;
-  background: var(--color-bg-wrapper);
-  border-top: 1px solid var(--color-border);
-}
-
-.typing-area input[type="text"] {
-  height: 45px;
-  width: calc(100% - 63px);
-  /* Adjusted width for new button/margin */
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px;
-  background: var(--color-bg-page);
-  color: var(--color-text-light);
-}
-
-.typing-area input:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.typing-area button {
-  color: #000;
-  width: 55px;
-  border: none;
-  outline: none;
-  background: var(--color-main-accent);
-  font-size: 19px;
-  cursor: pointer;
-  opacity: 0.7;
-  pointer-events: none;
-  border-radius: 10px;
-  margin-left: 8px;
-  /* Slight separation from input */
-  transition: all 0.3s ease;
-}
-
-.typing-area button.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.typing-area button:hover {
-  background: #CC4040;
-}
-
-/* --- RESPONSIVENESS (Adjusted to maintain dark mode aesthetic) --- */
-@media screen and (max-width: 900px) {
-
-  /* Auth Page Responsiveness */
-  .auth-page-body.signup-design {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
-  }
-
-  .auth-page-body.signup-design .wrapper {
-    width: 100%;
-    height: auto;
-    background: var(--color-bg-wrapper);
-    justify-content: center;
-    position: relative;
-  }
-
-  .auth-page-body.signup-design .content-area {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-  }
-
-  .auth-page-body.signup-design .wrapper img {
-    display: none;
-  }
-
-  /* Chat/Users Page Responsiveness */
-  .users,
-  .chat-area {
-    width: 100%;
-    max-width: none;
-  }
-
-  .users-list {
-    padding-right: 0;
-  }
-
-  .signup-header h1 {
-    font-size: 36px;
-  }
-
-  .signup-header h2 {
-    font-size: 24px;
-  }
-
-  .form form .name-details {
-    flex-direction: column;
-  }
-
-  .form form .name-details .field {
-    width: 100%;
-  }
-}
-
-/* --- Input Field Styles (General input glow) --- */
-.form .name-details .field input {
-  width: 100%;
-}
-
-.form input:not([type="file"]):not([type="submit"]) {
-  height: 50px;
-  width: 100%;
-  font-size: 16px;
-  padding: 0 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* 🔑 MODIFIED: Input Focus Glow (Red) */
-.form input:not([type="file"]):not([type="submit"]):focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
-  outline: none;
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: USERS LIST PAGE STYLES (users.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.users {
-  /* Inner content container - REFINED STYLING */
-  width: 100%;
-  max-width: 450px;
-  /* Standard chat/user list width */
-  height: 100%;
-  max-height: 700px;
-  /* Max height for desktop/tablet */
-  padding: 25px 30px;
-  background: var(--color-bg-wrapper);
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  /* Subtle shadow for depth */
-
-  display: flex;
-  flex-direction: column;
-  color: var(--color-text-light);
-}
-
-.users header,
-.users-list a {
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-border);
-  justify-content: space-between;
-}
-
-.users header img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  /* Ensure images are circles */
-}
-
-:is(.users, .users-list) .content {
-  display: flex;
-  align-items: center;
-}
-
-:is(.users, .users-list) .content .details {
-  color: var(--color-text-light);
-  margin-left: 20px;
-}
-
-:is(.users, .users-list) .details span {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* Logout Button - Consistent with primary accent styling */
-.users header .logout {
-  display: block;
-  background: var(--color-main-accent);
-  /* Use main accent */
-  color: #000;
-  /* Black text for high contrast */
-  outline: none;
-  border: none;
-  padding: 7px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
-}
-
-.users header .logout:hover {
-  background: #CC4040;
-  /* Darker red hover */
-  filter: none;
-  transform: translateY(-2px);
-  box-shadow: 0 7px 15px rgba(255, 80, 80, 0.5);
-}
-
-/* Search Bar */
-.users .search {
-  margin: 20px 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.users .search .text {
-  font-size: 18px;
-  color: var(--color-text-light);
-}
-
-.users .search input {
-  position: absolute;
-  height: 42px;
-  width: calc(100% - 50px);
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px 0 0 10px;
-  /* Rounded left side */
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-}
-
-.users .search input.show:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.users .search input.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.users .search button {
-  position: relative;
-  z-index: 1;
-  width: 47px;
-  height: 42px;
-  font-size: 17px;
-  cursor: pointer;
-  border: 1px solid var(--color-border);
-  border-left: none;
-  /* Blends with input */
-  background: var(--color-input-bg);
-  color: var(--color-text-subtle);
-  outline: none;
-  border-radius: 0 10px 10px 0;
-  /* Rounded right side */
-  transition: all 0.3s ease;
-}
-
-.users .search button.active {
-  background: var(--color-main-accent);
-  color: #000;
-  border-color: var(--color-main-accent);
-}
-
-.search button.active i::before {
-  content: '\f00d';
-}
-
-/* Users List */
-.users-list {
-  /* Let the list consume available vertical space */
-  flex-grow: 1;
-  max-height: 100%;
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-:is(.users-list, .chat-box)::-webkit-scrollbar {
-  width: 0px;
-}
-
-.users-list a {
-  padding: 10px 0;
-  /* Adjusted vertical padding */
-  margin-bottom: 5px;
-  /* Added small vertical margin for separation */
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  border-bottom: 1px solid var(--color-border);
-  border-radius: 8px;
-  /* Subtle rounding for hover */
-  transition: all 0.25s ease;
-}
-
-.users-list a:hover {
-  background: rgba(255, 80, 80, 0.05);
-  /* Subtle red tint on hover */
-}
-
-.users-list a:last-child {
-  margin-bottom: 0px;
-  border-bottom: none;
-}
-
-.users-list a img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.users-list a .details p {
-  color: var(--color-text-subtle);
-}
-
-.users-list a .status-dot {
-  font-size: 12px;
-  color: var(--color-online-status);
-  /* Clean Green */
-  padding-left: 10px;
-}
-
-.users-list a .status-dot.offline {
-  color: var(--color-text-subtle);
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: CHAT AREA STYLES (chat.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.chat-area {
-  padding: 0;
-  /* Removed padding here, added to header/box/typing area */
-  width: 100%;
-  height: 100vh;
-  /* Make the section full height */
-  max-width: 800px;
-  /* Centered max-width for readability */
-  background: var(--color-bg-wrapper);
-  /* Set background here as it lacks a wrapper */
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Integrated Header Structure */
-.chat-area header {
-  display: flex;
-  align-items: center;
-  padding: 18px 30px;
-  background: var(--color-bg-wrapper);
-  color: var(--color-text-light);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.chat-area header .back-icon {
-  color: var(--color-text-light);
-  font-size: 18px;
-}
-
-.chat-area header img {
-  height: 45px;
-  width: 45px;
-  margin: 0 15px;
-  border-radius: 50%;
-}
-
-.chat-area header .details span {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-text-light);
-}
-
-.chat-area header .details p {
-  color: var(--color-text-subtle);
-}
-
-/* Integrated Chat Box Structure */
-.chat-box {
-  flex-grow: 1;
-  height: auto;
-  max-height: none;
-  padding: 20px 30px;
-  /* Consistent padding */
-  background: var(--color-bg-page);
-  /* Page background for chat messages area */
-  overflow-y: auto;
-}
-
-.chat-box::-webkit-scrollbar-track {
-  background: var(--color-bg-wrapper);
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-}
-
-.chat-box .text {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: calc(100% - 50px);
-  text-align: center;
-  transform: translate(-50%, -50%);
-  color: var(--color-text-subtle);
-}
-
-.chat-box .chat {
-  margin: 15px 0;
-}
-
-.chat-box .chat p {
-  word-wrap: break-word;
-  padding: 10px 18px;
-  border-radius: 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.chat-box .outgoing {
-  display: flex;
-}
-
-.chat-box .outgoing .details {
-  margin-left: auto;
-  max-width: calc(100% - 130px);
-}
-
-.outgoing .details p {
-  /* Primary accent for outgoing messages */
-  background: var(--color-main-accent);
-  color: #000;
-  border-radius: 18px 18px 0 18px;
-}
-
-.chat-box .incoming {
-  display: flex;
-  align-items: flex-end;
-}
-
-.chat-box .incoming img {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-.chat-box .incoming .details {
-  margin-right: auto;
-  margin-left: 10px;
-  max-width: calc(100% - 130px);
-}
-
-.incoming .details p {
-  /* Input background for incoming messages */
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  border: 1px solid var(--color-border);
-  border-radius: 18px 18px 18px 0;
-}
-
-/* Integrated Typing Area Structure */
-.typing-area {
-  padding: 18px 30px;
-  display: flex;
-  justify-content: space-between;
-  background: var(--color-bg-wrapper);
-  border-top: 1px solid var(--color-border);
-}
-
-.typing-area input[type="text"] {
-  height: 45px;
-  width: calc(100% - 63px);
-  /* Adjusted width for new button/margin */
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px;
-  background: var(--color-bg-page);
-  color: var(--color-text-light);
-}
-
-.typing-area input:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.typing-area button {
-  color: #000;
-  width: 55px;
-  border: none;
-  outline: none;
-  background: var(--color-main-accent);
-  font-size: 19px;
-  cursor: pointer;
-  opacity: 0.7;
-  pointer-events: none;
-  border-radius: 10px;
-  margin-left: 8px;
-  /* Slight separation from input */
-  transition: all 0.3s ease;
-}
-
-.typing-area button.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.typing-area button:hover {
-  background: #CC4040;
-}
-
-/* --- RESPONSIVENESS (Adjusted to maintain dark mode aesthetic) --- */
-@media screen and (max-width: 900px) {
-
-  /* Auth Page Responsiveness */
-  .auth-page-body.signup-design {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
-  }
-
-  .auth-page-body.signup-design .wrapper {
-    width: 100%;
-    height: auto;
-    background: var(--color-bg-wrapper);
-    justify-content: center;
-    position: relative;
-  }
-
-  .auth-page-body.signup-design .content-area {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-  }
-
-  .auth-page-body.signup-design .wrapper img {
-    display: none;
-  }
-
-  /* Chat/Users Page Responsiveness */
-  .users,
-  .chat-area {
-    width: 100%;
-    max-width: none;
-  }
-
-  .users-list {
-    padding-right: 0;
-  }
-
-  .signup-header h1 {
-    font-size: 36px;
-  }
-
-  .signup-header h2 {
-    font-size: 24px;
-  }
-
-  .form form .name-details {
-    flex-direction: column;
-  }
-
-  .form form .name-details .field {
-    width: 100%;
-  }
-}
-
-/* --- Input Field Styles (General input glow) --- */
-.form .name-details .field input {
-  width: 100%;
-}
-
-.form input:not([type="file"]):not([type="submit"]) {
-  height: 50px;
-  width: 100%;
-  font-size: 16px;
-  padding: 0 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* 🔑 MODIFIED: Input Focus Glow (Red) */
-.form input:not([type="file"]):not([type="submit"]):focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
-  outline: none;
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: USERS LIST PAGE STYLES (users.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.users {
-  /* Inner content container - REFINED STYLING */
-  width: 100%;
-  max-width: 450px;
-  /* Standard chat/user list width */
-  height: 100%;
-  max-height: 700px;
-  /* Max height for desktop/tablet */
-  padding: 25px 30px;
-  background: var(--color-bg-wrapper);
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  /* Subtle shadow for depth */
-
-  display: flex;
-  flex-direction: column;
-  color: var(--color-text-light);
-}
-
-.users header,
-.users-list a {
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-border);
-  justify-content: space-between;
-}
-
-.users header img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  /* Ensure images are circles */
-}
-
-:is(.users, .users-list) .content {
-  display: flex;
-  align-items: center;
-}
-
-:is(.users, .users-list) .content .details {
-  color: var(--color-text-light);
-  margin-left: 20px;
-}
-
-:is(.users, .users-list) .details span {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* Logout Button - Consistent with primary accent styling */
-.users header .logout {
-  display: block;
-  background: var(--color-main-accent);
-  /* Use main accent */
-  color: #000;
-  /* Black text for high contrast */
-  outline: none;
-  border: none;
-  padding: 7px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
-}
-
-.users header .logout:hover {
-  background: #CC4040;
-  /* Darker red hover */
-  filter: none;
-  transform: translateY(-2px);
-  box-shadow: 0 7px 15px rgba(255, 80, 80, 0.5);
-}
-
-/* Search Bar */
-.users .search {
-  margin: 20px 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.users .search .text {
-  font-size: 18px;
-  color: var(--color-text-light);
-}
-
-.users .search input {
-  position: absolute;
-  height: 42px;
-  width: calc(100% - 50px);
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px 0 0 10px;
-  /* Rounded left side */
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-}
-
-.users .search input.show:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.users .search input.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.users .search button {
-  position: relative;
-  z-index: 1;
-  width: 47px;
-  height: 42px;
-  font-size: 17px;
-  cursor: pointer;
-  border: 1px solid var(--color-border);
-  border-left: none;
-  /* Blends with input */
-  background: var(--color-input-bg);
-  color: var(--color-text-subtle);
-  outline: none;
-  border-radius: 0 10px 10px 0;
-  /* Rounded right side */
-  transition: all 0.3s ease;
-}
-
-.users .search button.active {
-  background: var(--color-main-accent);
-  color: #000;
-  border-color: var(--color-main-accent);
-}
-
-.search button.active i::before {
-  content: '\f00d';
-}
-
-/* Users List */
-.users-list {
-  /* Let the list consume available vertical space */
-  flex-grow: 1;
-  max-height: 100%;
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-:is(.users-list, .chat-box)::-webkit-scrollbar {
-  width: 0px;
-}
-
-.users-list a {
-  padding: 10px 0;
-  /* Adjusted vertical padding */
-  margin-bottom: 5px;
-  /* Added small vertical margin for separation */
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  border-bottom: 1px solid var(--color-border);
-  border-radius: 8px;
-  /* Subtle rounding for hover */
-  transition: all 0.25s ease;
-}
-
-.users-list a:hover {
-  background: rgba(255, 80, 80, 0.05);
-  /* Subtle red tint on hover */
-}
-
-.users-list a:last-child {
-  margin-bottom: 0px;
-  border-bottom: none;
-}
-
-.users-list a img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.users-list a .details p {
-  color: var(--color-text-subtle);
-}
-
-.users-list a .status-dot {
-  font-size: 12px;
-  color: var(--color-online-status);
-  /* Clean Green */
-  padding-left: 10px;
-}
-
-.users-list a .status-dot.offline {
-  color: var(--color-text-subtle);
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 🔑 MODIFIED: CHAT AREA STYLES (chat.php) - REVISED FOR PROFESSIONAL LOOK --- */
-/* ---------------------------------------------------- */
-.chat-area {
-  padding: 0;
-  /* Removed padding here, added to header/box/typing area */
-  width: 100%;
-  height: 100vh;
-  /* Make the section full height */
-  max-width: 800px;
-  /* Centered max-width for readability */
-  background: var(--color-bg-wrapper);
-  /* Set background here as it lacks a wrapper */
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Integrated Header Structure */
-.chat-area header {
-  display: flex;
-  align-items: center;
-  padding: 18px 30px;
-  background: var(--color-bg-wrapper);
-  color: var(--color-text-light);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.chat-area header .back-icon {
-  color: var(--color-text-light);
-  font-size: 18px;
-}
-
-.chat-area header img {
-  height: 45px;
-  width: 45px;
-  margin: 0 15px;
-  border-radius: 50%;
-}
-
-.chat-area header .details span {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-text-light);
-}
-
-.chat-area header .details p {
-  color: var(--color-text-subtle);
-}
-
-/* Integrated Chat Box Structure */
-.chat-box {
-  flex-grow: 1;
-  height: auto;
-  max-height: none;
-  padding: 20px 30px;
-  /* Consistent padding */
-  background: var(--color-bg-page);
-  /* Page background for chat messages area */
-  overflow-y: auto;
-}
-
-.chat-box::-webkit-scrollbar-track {
-  background: var(--color-bg-wrapper);
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-}
-
-.chat-box .text {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: calc(100% - 50px);
-  text-align: center;
-  transform: translate(-50%, -50%);
-  color: var(--color-text-subtle);
-}
-
-.chat-box .chat {
-  margin: 15px 0;
-}
-
-.chat-box .chat p {
-  word-wrap: break-word;
-  padding: 10px 18px;
-  border-radius: 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.chat-box .outgoing {
-  display: flex;
-}
-
-.chat-box .outgoing .details {
-  margin-left: auto;
-  max-width: calc(100% - 130px);
-}
-
-.outgoing .details p {
-  /* Primary accent for outgoing messages */
-  background: var(--color-main-accent);
-  color: #000;
-  border-radius: 18px 18px 0 18px;
-}
-
-.chat-box .incoming {
-  display: flex;
-  align-items: flex-end;
-}
-
-.chat-box .incoming img {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-.chat-box .incoming .details {
-  margin-right: auto;
-  margin-left: 10px;
-  max-width: calc(100% - 130px);
-}
-
-.incoming .details p {
-  /* Input background for incoming messages */
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  border: 1px solid var(--color-border);
-  border-radius: 18px 18px 18px 0;
-}
-
-/* Integrated Typing Area Structure */
-.typing-area {
-  padding: 18px 30px;
-  display: flex;
-  justify-content: space-between;
-  background: var(--color-bg-wrapper);
-  border-top: 1px solid var(--color-border);
-}
-
-.typing-area input[type="text"] {
-  height: 45px;
-  width: calc(100% - 63px);
-  /* Adjusted width for new button/margin */
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid var(--color-border);
-  outline: none;
-  border-radius: 10px;
-  background: var(--color-bg-page);
-  color: var(--color-text-light);
-}
-
-.typing-area input:focus {
-  border-color: var(--color-main-accent);
-  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-.typing-area button {
-  color: #000;
-  width: 55px;
-  border: none;
-  outline: none;
-  background: var(--color-main-accent);
-  font-size: 19px;
-  cursor: pointer;
-  opacity: 0.7;
-  pointer-events: none;
-  border-radius: 10px;
-  margin-left: 8px;
-  /* Slight separation from input */
-  transition: all 0.3s ease;
-}
-
-.typing-area button.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.typing-area button:hover {
-  background: #CC4040;
-}
-
-/* --- RESPONSIVENESS (Adjusted to maintain dark mode aesthetic) --- */
-@media screen and (max-width: 900px) {
-
-  /* Auth Page Responsiveness */
-  .auth-page-body.signup-design {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
-  }
-
-  .auth-page-body.signup-design .wrapper {
-    width: 100%;
-    height: auto;
-    background: var(--color-bg-wrapper);
-    justify-content: center;
-    position: relative;
-  }
-
-  .auth-page-body.signup-design .content-area {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-  }
-
-  .auth-page-body.signup-design .wrapper img {
-    display: none;
-  }
-
-  /* Chat/Users Page Responsiveness */
-  .users {
-    width: 100%;
-    max-width: none;
-    height: 100vh;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .chat-area {
-    width: 100%;
-    max-width: none;
-  }
-
-  .users-list {
-    padding-right: 0;
-  }
-}
-
-@media screen and (max-width: 450px) {
-
-  .users,
-  .chat-area {
-    padding: 0;
-  }
-
-  .users header {
-    padding: 20px;
-  }
-
-  .users-list {
-    padding: 10px 20px;
-  }
-
-  .users .search {
-    padding: 0 20px;
-  }
-
-  .users-list a {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .chat-area header {
-    padding: 15px 20px;
-  }
-
   .chat-box {
     padding: 15px 20px;
   }
-
   .typing-area {
     padding: 15px 20px;
   }
-
-  .users header img {
+  .typing-area input[type="text"] {
+    height: 40px;
+    width: calc(100% - 58px);
+    font-size: 15px;
+  }
+  .typing-area button {
+    height: 40px;
+    width: 45px;
+    font-size: 17px;
+  }
+  .chat-area header img {
     height: 45px;
     width: 45px;
   }
-
   .users header .logout {
     padding: 6px 10px;
     font-size: 16px;
   }
-
   :is(.users, .users-list) .content .details {
     margin-left: 15px;
   }
-
   .users-list a .details span {
     font-size: 16px;
   }
-
   .chat-box .chat p {
     font-size: 15px;
   }
-
   .chat-box .outgoing .details {
     max-width: 230px;
   }
-
   .chat-box .incoming .details {
     max-width: 265px;
   }
-
   .typing-area input[type="text"] {
     height: 40px;
   }
-
   .typing-area button {
     height: 40px;
     width: 45px;
   }
-
-  /* Admin Panel Responsive Tweaks */
   .admin-panel header {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .admin-panel .header-text {
     margin-bottom: 15px;
   }
-
   .admin-panel .logout-btn {
     align-self: flex-end;
   }
 }
 
-/* ---------------------------------------------------- */
-/* --- 🔑 NEW: ADMIN PANEL STYLES (admin.php) --- */
-/* ---------------------------------------------------- */
-
 .admin-page-body {
-  /* Ensure the body is set up to center the content */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2557,30 +902,25 @@ body {
   background-color: var(--color-bg-page);
 }
 
-/* Override the general .wrapper for the admin page to center content */
 .admin-page-body .wrapper {
-  /* Auto height, full width container */
   height: auto;
   min-height: 80vh;
   width: 90%;
   max-width: 1200px;
-  /* Wider for table content */
   background: transparent;
-  /* Wrapper doesn't need background */
   border-radius: 0;
   box-shadow: none;
-  padding: 20px 0;
-
+  padding: 30px;
+  margin: 0;
   display: block;
-  /* Change to block to contain the admin-panel section */
-  overflow-y: auto;
 }
 
 .admin-panel {
+  width: 100%;
   background: var(--color-bg-wrapper);
-  border-radius: 15px;
-  padding: 30px;
+  border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  padding: 30px;
   color: var(--color-text-light);
 }
 
@@ -2588,64 +928,65 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
   padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.admin-panel .header-text h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
 }
 
-.admin-panel .header-text {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--color-main-accent);
-}
-
-.admin-panel .logout-btn {
-  display: block;
-  background: var(--color-input-bg);
+.admin-panel .header-text p {
+  font-size: 14px;
   color: var(--color-text-subtle);
-  border: 1px solid var(--color-border);
-  padding: 8px 20px;
-  text-decoration: none;
-  border-radius: 8px;
+  margin-top: 5px;
+}
+.admin-panel .logout-btn {
+  background: var(--color-main-accent);
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 6px;
   font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
 }
 
 .admin-panel .logout-btn:hover {
-  color: var(--color-main-accent);
-  border-color: var(--color-main-accent);
-  background: var(--color-input-bg);
+  background: #CC4040;
+  transform: translateY(-1px);
 }
 
-/* Table Styling */
-.admin-table-container {
-  overflow-x: auto;
-  /* Allows horizontal scrolling on small screens */
-}
-
-.admin-panel table {
+.admin-panel .users-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  color: var(--color-text-light);
-  font-size: 15px;
+  background: var(--color-input-bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-panel th, .admin-panel td {
+  text-align: left;
 }
 
 .admin-panel thead th {
-  background-color: var(--color-input-bg);
-  color: var(--color-text-light);
-  text-align: left;
+  background: var(--color-bg-page);
+  color: var(--color-main-accent);
   padding: 15px 20px;
+  font-size: 16px;
   font-weight: 600;
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Rounded corners for the header */
-.admin-panel thead tr th:first-child {
+.admin-panel thead th:first-child {
   border-top-left-radius: 8px;
 }
 
-.admin-panel thead tr th:last-child {
+.admin-panel thead th:last-child {
   border-top-right-radius: 8px;
 }
 
@@ -2655,7 +996,6 @@ body {
 
 .admin-panel tbody tr:hover {
   background-color: rgba(255, 80, 80, 0.05);
-  /* Subtle hover effect */
 }
 
 .admin-panel tbody td {
@@ -2664,9 +1004,7 @@ body {
   vertical-align: middle;
 }
 
-/* Remove Button Styling */
 .admin-panel .remove-btn {
-  /* Use error red for danger action */
   background: var(--color-error);
   color: #fff;
   border: none;
@@ -2681,28 +1019,9 @@ body {
 
 .admin-panel .remove-btn:hover {
   background: #a52838;
-  /* Darker error color */
   transform: translateY(-1px);
 }
 
-/* --- GLOBAL LAYOUT FIXES FOR PROFESSIONAL LOOK --- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 1. Body and Main Wrapper (Desktop View) */
 body {
   display: flex;
   justify-content: center;
@@ -2717,74 +1036,6 @@ body {
 .main-portal-wrapper {
   display: flex;
   width: 95%;
-  /* Slightly wider container */
-  max-width: 1400px;
-  height: 90vh;
-  max-height: 900px;
-  /* Taller container for better chat experience */
-  background: var(--color-bg-wrapper);
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-/* --- 🌑 ANIME-INSPIRED DARK MODE / MODERN AESTHETIC COLOR PALETTE --- */
-:root {
-  --color-main-accent: #FF5050;
-  /* Primary Accent: Vibrant Crimson/Red */
-  --color-bg-page: #0B0E17;
-  /* Outer page background: Deep Black/Blue */
-  --color-bg-wrapper: #1F2432;
-  /* Card/Wrapper background: Dark Grey/Blue */
-  --color-input-bg: #2C3549;
-  /* Input background: Slightly Lighter Dark Blue */
-  --color-text-light: #F8F9FA;
-  /* Main Text Color: Off-White */
-  --color-text-subtle: #9EA5B0;
-  /* Subtle Text/Placeholder: Light Grey */
-  --color-border: #3F475B;
-  /* Input border color: Darker Grey */
-  --color-error: #DC3545;
-  /* Standard Red for Errors */
-  --color-online-status: #4CAF50;
-  /* Clean Green for Online Status */
-}
-
-/* --- GLOBAL RESET & BODY STYLES --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background: var(--color-bg-page);
-  font-family: 'Poppins', sans-serif;
-  color: var(--color-text-light);
-}
-
-/* Remove old wrapper styling if it conflicts */
-.wrapper {
-  display: contents;
-}
-
-
-/* -------------------------------------------------------------------------- */
-/* --- 1. MAIN PORTAL STRUCTURE (SPLIT SCREEN) --- */
-/* -------------------------------------------------------------------------- */
-
-.main-portal-wrapper {
-  display: flex;
-  width: 95%;
   max-width: 1400px;
   height: 90vh;
   max-height: 900px;
@@ -2793,10 +1044,6 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
-
-/* -------------------------------------------------------------------------- */
-/* --- 2. USER LIST SIDEBAR (LEFT PANEL) --- */
-/* -------------------------------------------------------------------------- */
 
 .user-list-panel {
   width: 380px;
@@ -2808,7 +1055,6 @@ body {
   overflow-y: auto;
 }
 
-/* Current User Header in Sidebar */
 .current-user-header {
   display: flex;
   align-items: center;
@@ -2826,293 +1072,322 @@ body {
   align-items: center;
 }
 
-.current-user-header .profile-img {
+.current-user-header .content .details {
+  margin-left: 15px;
+}
+
+.current-user-header .content .details span {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.current-user-header img {
   height: 50px;
   width: 50px;
-  object-fit: cover;
   border-radius: 50%;
-  margin-right: 15px;
+  object-fit: cover;
 }
 
-.current-user-header .details {
-  line-height: 1.2;
-}
-
-.current-user-header .user-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-light);
-}
-
-.current-user-header .logout-btn {
-  text-decoration: none;
-  color: var(--color-text-subtle);
-  font-size: 0.9rem;
-  padding: 8px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.current-user-header .logout-btn:hover {
+.current-user-header .logout {
   background: var(--color-main-accent);
-  border-color: var(--color-main-accent);
-  color: var(--color-text-light);
+  color: #000;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 80, 80, 0.4);
 }
 
-/* Search Container */
-.search-container {
-  padding: 15px 25px;
+.current-user-header .logout:hover {
+  background: #CC4040;
+  transform: translateY(-1px);
+}
+
+.current-user-header .search {
+  padding: 15px 25px 20px;
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 70px;
+  background: var(--color-bg-wrapper);
+  z-index: 5;
 }
 
-.search-container .text {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--color-text-subtle);
-  font-size: 0.9rem;
-}
-
-.search-input-group {
-  display: flex;
-  align-items: center;
-}
-
-.search-input-group input {
-  flex-grow: 1;
-  padding: 10px 15px;
+.current-user-header .search input {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
   border: 1px solid var(--color-border);
-  border-radius: 20px 0 0 20px;
+  border-radius: 8px;
   background: var(--color-input-bg);
   color: var(--color-text-light);
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s ease;
+  font-size: 16px;
 }
 
-.search-input-group input:focus {
+.current-user-header .search input:focus {
   border-color: var(--color-main-accent);
+  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
+  outline: none;
 }
 
-.search-icon-btn {
-  width: 50px;
-  height: 40px;
-  border: none;
-  background: var(--color-main-accent);
-  color: var(--color-text-light);
-  border-radius: 0 20px 20px 0;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.search-icon-btn:hover {
-  opacity: 0.9;
-}
-
-/* User List Styling (The results container) */
-.users-list {
+.user-list-container {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 10px 0;
+  padding: 0 25px 20px;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Individual user links/rows (The content populated by AJAX) */
-.users-list a {
+.user-list-container a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 25px;
-  text-decoration: none;
-  color: var(--color-text-light);
-  border-left: 3px solid transparent;
-  transition: background 0.2s ease, border-left-color 0.2s ease;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+  border-radius: 0;
+  margin: 0 -10px;
+  padding: 15px 10px;
 }
 
-.users-list a:hover {
-  background: rgba(255, 80, 80, 0.1);
-  border-left-color: var(--color-main-accent);
+.user-list-container a:hover {
+  background-color: rgba(255, 80, 80, 0.05);
 }
 
-.users-list a .content img {
-  height: 40px;
-  width: 40px;
+.user-list-container a:last-child {
+  border-bottom: none;
+}
+
+.user-list-container a img {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  margin-right: 15px;
   object-fit: cover;
 }
 
-/* Last user in list gets a border-bottom */
-.users-list a:not(:last-child) {
-  border-bottom: 1px solid var(--color-border);
+.user-list-container a .details {
+  flex-grow: 1;
+  margin-left: 15px;
+  color: var(--color-text-light);
 }
 
+.user-list-container a .details span {
+  font-size: 17px;
+  font-weight: 500;
+}
 
-/* -------------------------------------------------------------------------- */
-/* --- 3. CHAT CONTENT AREA (RIGHT PANEL) --- */
-/* -------------------------------------------------------------------------- */
+.user-list-container a .details p {
+  font-size: 14px;
+  color: var(--color-text-subtle);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-list-container a .status-dot {
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.user-list-container a .status-dot i {
+  color: var(--color-online-status);
+}
+
+.user-list-container a .status-dot.offline i {
+  color: var(--color-text-subtle);
+}
 
 .chat-content-area {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* Welcome Message Placeholder */
-.welcome-message-placeholder {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--color-text-subtle);
-  background: #151a24;
-  /* Darker background for the chat area */
-}
-
-.welcome-message-placeholder i {
-  font-size: 6rem;
-  color: var(--color-main-accent);
-  margin-bottom: 20px;
-  opacity: 0.5;
-}
-
-.welcome-message-placeholder h2 {
-  color: var(--color-text-light);
-  margin-bottom: 10px;
-}
-
-/* Chat Header */
-.chat-header {
+.chat-content-area .chat-header {
   display: flex;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 25px;
   border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
   background: var(--color-bg-wrapper);
-  z-index: 5;
+  position: relative;
 }
 
-.chat-header img {
+.chat-content-area .chat-header .back-icon {
+  display: none;
+  font-size: 20px;
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+
+.chat-content-area .chat-header img {
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  margin-right: 15px;
   object-fit: cover;
+  margin-right: 15px;
 }
 
-.chat-header .user-name {
-  font-weight: 600;
+.chat-content-area .chat-header .details span {
+  font-size: 18px;
+  font-weight: 500;
   color: var(--color-text-light);
-  font-size: 1.1rem;
 }
 
-/* Chat Box (Messages) */
-.message-container {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 30px;
-  background: #151a24;
-}
-
-/* Chat Input Form */
-.message-input-form {
-  display: flex;
-  padding: 15px 30px;
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-wrapper);
-}
-
-.message-text-input {
-  flex-grow: 1;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  margin-right: 10px;
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  font-size: 1rem;
-  outline: none;
-}
-
-.send-message-btn {
-  width: 50px;
-  height: 45px;
-  border: none;
-  background: var(--color-main-accent);
-  color: var(--color-text-light);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.send-message-btn:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
-}
-
-/* Online/Offline Status indicators (using class names likely generated by PHP) */
-.status-dot {
-  font-size: 12px;
-  margin-left: 10px;
+.chat-content-area .chat-header .details p {
+  font-size: 14px;
   color: var(--color-text-subtle);
 }
 
-.online .status-dot,
-.online-status {
-  color: var(--color-online-status) !important;
+.chat-content-box {
+  flex-grow: 1;
+  padding: 30px 25px;
+  overflow-y: auto;
+  background: var(--color-bg-page);
+  /* The chat background is darker page color */
+  position: relative;
 }
 
-/* Chat bubbles styling (assuming original structure: .outgoing and .incoming) */
-.chat-box .outgoing .details p {
+.chat-content-box .text-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-subtle);
+  text-align: center;
+  width: 90%;
+}
+
+.chat-content-box .chat {
+  margin: 15px 0;
+  display: flex;
+}
+
+.chat-content-box .outgoing {
+  justify-content: flex-end;
+}
+
+.chat-content-box .outgoing .details {
+  max-width: 60%;
+}
+
+.chat-content-box .outgoing .details p {
   background: var(--color-main-accent);
-  color: var(--color-bg-wrapper);
-  padding: 10px 15px;
+  color: #000;
+  padding: 10px 18px;
   border-radius: 18px 18px 0 18px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.chat-box .incoming .details p {
-  background: var(--color-input-bg);
-  color: var(--color-text-light);
-  padding: 10px 15px;
-  border-radius: 18px 18px 18px 0;
+.chat-content-box .incoming {
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
-.chat-box .incoming img {
-  /* Keep existing chat box styling for incoming user image */
+.chat-content-box .incoming img {
   height: 35px;
   width: 35px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* -------------------------------------------------------------------------- */
-/* --- 4. RESPONSIVE DESIGN (FOR MOBILE SCREENS) --- */
-/* -------------------------------------------------------------------------- */
+.chat-content-box .incoming .details {
+  margin-left: 10px;
+  max-width: 60%;
+}
 
-/* Hide the back button on desktop */
-.chat-content-area .back-icon {
-  display: none;
+.chat-content-box .incoming .details p {
+  background: var(--color-input-bg);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border);
+  padding: 10px 18px;
+  border-radius: 18px 18px 18px 0;
+  word-wrap: break-word;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-typing-area {
+  padding: 15px 25px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-wrapper);
+  display: flex;
+  align-items: center;
+}
+
+.chat-typing-area input[type="text"] {
+  flex-grow: 1;
+  height: 45px;
+  padding: 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-input-bg);
+  color: var(--color-text-light);
+  font-size: 16px;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chat-typing-area input:focus {
+  border-color: var(--color-main-accent);
+  box-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
+}
+
+.chat-typing-area button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-main-accent);
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.chat-typing-area button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.chat-typing-area button:hover {
+  background: #CC4040;
+}
+
+.user-list-container::-webkit-scrollbar, .chat-content-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.user-list-container::-webkit-scrollbar-thumb, .chat-content-box::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 4px;
+}
+
+.user-list-container::-webkit-scrollbar-track, .chat-content-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media screen and (max-width: 1050px) {
+  .main-portal-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .main-portal-wrapper {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-    box-shadow: none;
-    position: relative;
-  }
-
-  /* User List (Mobile Default View) */
   .user-list-panel {
     width: 100vw;
     min-width: 100vw;
     border-right: none;
   }
-
-  /* Chat Content Area (Mobile Overlay) */
   .chat-content-area {
     position: absolute;
     top: 0;
@@ -3121,29 +1396,51 @@ body {
     height: 100vh;
     z-index: 10;
     transform: translateX(100%);
-    /* Starts off-screen */
     transition: transform 0.3s ease-in-out;
   }
-
-  /* Show the Chat Content Area when a user is selected */
   .chat-content-area.chat-active {
     transform: translateX(0);
   }
-
-  /* Show the back button on mobile */
   .chat-content-area .back-icon {
     display: block;
     margin-right: 15px;
     color: var(--color-text-light);
-    font-size: 1.2rem;
   }
-
-  /* Hide the desktop welcome message on mobile (we use a transition instead) */
-  .welcome-message-placeholder {
-    display: none;
+  .chat-content-area .chat-header img {
+    height: 40px;
+    width: 40px;
+  }
+  .chat-content-box {
+    padding: 20px 15px;
+  }
+  .chat-typing-area {
+    padding: 10px 15px;
+  }
+  .chat-typing-area input[type="text"], .chat-typing-area button {
+    height: 40px;
+  }
+  .user-list-panel .current-user-header {
+    padding: 15px 20px;
+  }
+  .user-list-panel .current-user-header .content .details span {
+    font-size: 16px;
+  }
+  .user-list-panel .current-user-header .logout {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .user-list-panel .current-user-header .search {
+    padding: 10px 20px 15px;
+    top: 65px;
+  }
+  .user-list-panel .user-list-container {
+    padding: 0 20px 15px;
+  }
+  .user-list-panel .user-list-container a img {
+    height: 40px;
+    width: 40px;
   }
 }
-
 /* --- NEW MODAL STYLES (Add to style.css) --- */
 
 :root {
@@ -3394,71 +1691,4 @@ body {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
-}
-
-/* ============================================= */
-/* --- Password Show/Hide Icon Animation (Updated) --- */
-/* ============================================= */
-
-/* 1. Ensure the parent field is relative for icon positioning */
-.field.input {
-  position: relative;
-}
-
-/* 2. Base Style and Positioning for the Icon */
-.field.input input+.fas {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  /* Base position */
-  cursor: pointer;
-  color: var(--color-text-subtle);
-  font-size: 1.1em;
-  padding: 5px;
-
-  /* Smooth Transition: Apply to color, scale, and box-shadow */
-  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-  /* The cubic-bezier creates a 'pop' effect on transform changes */
-}
-
-/* 3. Interaction: Hover and Active State */
-.field.input input+.fas:hover,
-.field.input input+.fas:active {
-  color: var(--color-main-accent);
-  /* Vibrant accent color on hover */
-  transform: translateY(-50%) scale(1.15);
-  /* Pop out slightly on hover */
-  /* Add a subtle glow/shadow on interaction for polish */
-  text-shadow: 0 0 5px rgba(255, 80, 80, 0.5);
-}
-
-/* 4. Toggle Animation: Eye Closed (fa-eye-slash) state */
-/* When the password is VISIBLE (icon is SLASHED), make the icon more prominent */
-.field.input input+.fas.fa-eye-slash {
-  color: var(--color-main-accent);
-  /* Active/Prominent color when visible */
-  transform: translateY(-50%) scale(1.05);
-  /* Slightly bigger when active */
-  text-shadow: none;
-  /* Remove hover shadow to avoid conflict */
-}/* --- Add this to your style.css file or modify your existing rule for the message text --- */
-
-/* Target the paragraph element that holds the message */
-.users-list .details p {
-    /* 1. Ensure the text stays on a single line */
-    white-space: nowrap; 
-    
-    /* 2. Prevent the text from spilling out */
-    overflow: hidden; 
-    
-    /* 3. Add the ellipsis (...) at the end of the line */
-    text-overflow: ellipsis; 
-    
-    /* Optional: Ensure the message container takes up all available horizontal space */
-    width: 100%;
-    
-    /* Optional: Ensure the font is subtle for the message preview */
-    color: var(--color-text-subtle); 
-    font-size: 14px;
 }
